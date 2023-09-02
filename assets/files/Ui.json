@@ -1,0 +1,35 @@
+{
+    "products":[
+        {
+            "id":1,
+            "type":"UI",
+            "image":"assets/packages/ui_works/Ui_work1.png"
+        },
+        {
+            "id":2,
+            "type":"UI",
+            "image":"assets/packages/ui_works/ui_work2.png"
+        },
+        {
+            "id":3,
+            "type":"UI",
+            "image":"assets/packages/ui_works/ui_work3.png"
+        },
+        {
+            "id":4,
+            "type":"UI",
+            "image":"assets/packages/ui_works/ui_work4.png"
+        },
+        {
+            "id":5,
+            "type":"UI",
+            "image":"assets/packages/ui_works/ui_work5.png"
+        },
+        {
+            "id":6,
+            "type":"UI",
+            "image":"assets/packages/ui_works/ui_work6.png"
+        }
+        
+    ]
+}
