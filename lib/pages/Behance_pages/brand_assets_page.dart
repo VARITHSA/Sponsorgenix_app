@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 
 import '../../models/works.dart';
 
-class UxPage extends StatefulWidget {
-  const UxPage({super.key});
+class BrandAssetsPage extends StatefulWidget {
+  const BrandAssetsPage({super.key});
 
   @override
-  State<UxPage> createState() => _UxPageState();
+  State<BrandAssetsPage> createState() => BrandAssetsPageState();
 }
 
-class _UxPageState extends State<UxPage> {
+class BrandAssetsPageState extends State<BrandAssetsPage> {
   List<Works> works = [];
-  final String targetType = 'UX';
+  final String targetType = 'BRAND';
 
   @override
   void initState() {

@@ -7,22 +7,22 @@
         },
         {
             "id":2,
-            "type":"UI",
+            "type":"UX",
             "image":"assets/packages/ui_works/ui_work2.png"
         },
         {
             "id":3,
-            "type":"UI",
+            "type":"POST",
             "image":"assets/packages/ui_works/ui_work3.png"
         },
         {
             "id":4,
-            "type":"UI",
+            "type":"BRAND",
             "image":"assets/packages/ui_works/ui_work4.png"
         },
         {
             "id":5,
-            "type":"UI",
+            "type":"3D",
             "image":"assets/packages/ui_works/ui_work5.png"
         },
         {

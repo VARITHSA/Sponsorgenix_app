@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 
 import '../../models/works.dart';
 
-class UxPage extends StatefulWidget {
-  const UxPage({super.key});
+class ThreeDePage extends StatefulWidget {
+  const ThreeDePage({super.key});
 
   @override
-  State<UxPage> createState() => _UxPageState();
+  State<ThreeDePage> createState() => ThreeDePageState();
 }
 
-class _UxPageState extends State<UxPage> {
+class ThreeDePageState extends State<ThreeDePage> {
   List<Works> works = [];
-  final String targetType = 'UX';
+  final String targetType = '3D';
 
   @override
   void initState() {

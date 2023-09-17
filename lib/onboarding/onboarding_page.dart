@@ -55,19 +55,27 @@ class _OnboardingPageState extends State<OnboardingPage> {
             }),
           ),
           Positioned(
-            top: height < 750 ? 560 : height * 0.720,
-            left: width < 400 ? 145 : width * 0.415,
+            top: height < 750 ? 560 : height * 0.696,
+            left: width < 400 ? 145 : width * 0.395,
             child: GestureDetector(
-                onTap: () {
-                  // print('$height, $width');
-                  pageIndex != 2
-                      ? _pagecontroller.nextPage(
-                          duration: const Duration(milliseconds: 500),
-                          curve: Curves.ease)
-                      : Navigator.pushNamed(
-                          context, Routes.onboardingPage2Route);
-                },
-                child: Image.asset('assets/next_icon.png')),
+              onTap: () {
+                // print('$height, $width');
+                pageIndex != 2
+                    ? _pagecontroller.nextPage(
+                        duration: const Duration(milliseconds: 500),
+                        curve: Curves.ease)
+                    : Navigator.pushNamed(context, Routes.onboardingPage2Route);
+              },
+              child: Container(
+                height: 80,
+                width: 80,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.white),
+                  borderRadius: BorderRadius.circular(100),
+                ),
+                child: Image.asset('assets/next_icon.png'),
+              ),
+            ),
           ),
           Positioned(
               top: height < 750 ? height * 0.89 : height * 0.820,

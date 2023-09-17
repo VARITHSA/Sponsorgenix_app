@@ -127,7 +127,7 @@ class _IntroPageState extends State<IntroPage> {
             top: height > 750 ? height * 0.65 : height * 0.585,
             left: width > 350 ? height * 0.110 : height * 0.200,
             child: SizedBox(
-                height: height * 0.25 ,
+                height: height * 0.25,
                 child: const Image(image: AssetImage('assets/rocket.gif'))),
           ),
         ],
@@ -144,12 +144,12 @@ class upper_widget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    // double width = MediaQuery.of(context).size.width;
+    double width = MediaQuery.of(context).size.width;
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SizedBox(height: 100),
+        SizedBox(height: height < 750 ? 60 : 100),
         Row(
           children: [
             Padding(
@@ -181,8 +181,8 @@ class upper_widget extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(
-          height: 56,
+        SizedBox(
+          height: height < 750 ? 40 : 56,
         ),
         Padding(
           padding: const EdgeInsets.only(left: 23),
@@ -196,7 +196,7 @@ class upper_widget extends StatelessWidget {
                 "No SignUp",
                 style: GoogleFonts.plusJakartaSans(
                     color: Colors.white,
-                    fontSize: 32,
+                    fontSize: width < 400 ? 28 : 32,
                     fontWeight: FontWeight.w700),
               ),
             ),
@@ -213,7 +213,7 @@ class upper_widget extends StatelessWidget {
               "No Login",
               style: GoogleFonts.plusJakartaSans(
                   color: Colors.white,
-                  fontSize: 31,
+                  fontSize: width < 400 ? 28 : 32,
                   fontWeight: FontWeight.w700),
             ),
           ),
@@ -229,7 +229,7 @@ class upper_widget extends StatelessWidget {
               "No Irritating Emails",
               style: GoogleFonts.plusJakartaSans(
                   color: Colors.white,
-                  fontSize: 32,
+                  fontSize: width < 400 ? 28 : 32,
                   fontWeight: FontWeight.normal),
             ),
           ),
@@ -246,7 +246,7 @@ class upper_widget extends StatelessWidget {
               "Just Get\nStarted",
               style: GoogleFonts.plusJakartaSans(
                   color: Colors.white,
-                  fontSize: 32,
+                  fontSize: width < 400 ? 28 : 32,
                   fontWeight: FontWeight.normal),
             ),
           ),

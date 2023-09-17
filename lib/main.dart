@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sponsorgenix/onboarding/intro_onboard.dart';
 import 'package:sponsorgenix/onboarding/onboarding2_page.dart';
@@ -7,6 +8,7 @@ import 'package:sponsorgenix/onboarding/onboardp3_page.dart';
 import 'package:sponsorgenix/pages/explorePage.dart';
 import 'package:sponsorgenix/pages/home_pages.dart';
 import 'package:sponsorgenix/routes/routes.dart';
+import 'package:sponsorgenix/splashscreen/splash_screen.dart';
 // import 'package:sponsorgenix/splashscreen/splash_screen.dart';
 
 void main() {
@@ -24,16 +26,16 @@ class MyApp extends StatelessWidget {
           MediaQuery.of(context).size.width,
           MediaQuery.of(context).size.height,
         ));
-
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+        systemNavigationBarColor: Colors.transparent));
     return MaterialApp(
-      
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const IntroPage(),
+      home: const Splashscreen(),
       routes: {
         Routes.homePageRoute: (context) => const HomePage(),
         Routes.explorePageRoute: (context) => const ExplorePage(),
@@ -45,3 +47,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+

@@ -27,13 +27,13 @@ class _VideoPageState extends State<VideoPage> {
             ),
             Image.asset('assets/fusepodcast.png'),
             Positioned(
-              top: height < 700 ? height * 0.25 : height * 0.25,
-              left: width < 300 ? width * 0.05 : width * 0.1,
+              top: height < 750 ? height * 0.22 : height * 0.25,
+              left: width < 400 ? width * 0.03 : width * 0.1,
               child: Image.asset('assets/podcastcenter.png'),
             ),
             Positioned(
-              top: height < 700 ? height * 0.25 : height * 0.30,
-              left: width < 300 ? width * 0.05 : width * 0.1,
+              top: height < 750 ? height * 0.35 : height * 0.30,
+              left: width < 400 ? width * 0.15 : width * 0.1,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -58,7 +58,7 @@ class _VideoPageState extends State<VideoPage> {
                   Text(
                     'The page you requested could not be\nfound due to our hardworking\ndevelopers :/',
                     style: GoogleFonts.plusJakartaSans(
-                        fontSize: 16,
+                        fontSize: 16.sp,
                         color: Colors.white,
                         fontWeight: FontWeight.w500),
                   ),
@@ -77,7 +77,7 @@ class _VideoPageState extends State<VideoPage> {
                         height: 35.h,
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 5),
+                        padding: EdgeInsets.only(left: 5.w),
                         child: RichText(
                           text: TextSpan(
                             text: 'Sponsorgenix',
@@ -105,10 +105,12 @@ class _VideoPageState extends State<VideoPage> {
               ],
             ),
             Positioned(
-              top: height < 700 ? height * 0.45 : height * 0.50,
-              left: width < 300 ? width * 0.45 : width * 0.50,
+              top: height < 750 ? height * 0.60 : height * 0.50,
+              left: width < 400 ? width * 0.55 : width * 0.50,
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pop(context);
+                },
                 child: Container(
                   height: 40.h,
                   width: 97.w,

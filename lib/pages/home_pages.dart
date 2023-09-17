@@ -24,6 +24,11 @@ final pages = [
   const VideoPage(),
 ];
 int pageIndex = 0;
+int _pagehandler(int index) {
+  return index - 1;
+}
+
+var _pageIndex = _pagehandler(pageIndex);
 
 class _HomePageState extends State<HomePage> {
   @override
@@ -48,7 +53,8 @@ class _HomePageState extends State<HomePage> {
       //     ),
       //   ],
       bottomNavigationBar: Container(
-        color: Colors.black.withOpacity(0.1),
+        // color: Colors.grey.withOpacity(0.1),
+        color: Colors.transparent,
         child: ClipRRect(
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 10, sigmaY: 8),
@@ -258,5 +264,11 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
+  }
+}
+
+class PageHandler {
+  int handler(int index) {
+    return index = index - 1;
   }
 }

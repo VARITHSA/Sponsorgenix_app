@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sponsorgenix/pages/Behance_pages/Advertise_page.dart';
+import 'package:sponsorgenix/pages/Behance_pages/3d_assets_page.dart';
 import 'package:sponsorgenix/pages/Behance_pages/Ui_page.dart';
 import 'package:sponsorgenix/pages/Behance_pages/Ux_page.dart';
+import 'package:sponsorgenix/pages/Behance_pages/brand_assets_page.dart';
 import 'package:sponsorgenix/pages/Behance_pages/poster_page.dart';
-import 'package:sponsorgenix/pages/Behance_pages/social_page.dart';
 
 import '../themes/colors.dart';
 
@@ -140,8 +140,8 @@ final pages = [
   const UiPage(),
   const UxPage(),
   const PosterPage(),
-  const AdvertisePage(),
-  const SocialPage(),
+  const BrandAssetsPage(),
+  const ThreeDePage(),
 ];
 int _pageIndex = 0;
 String type = '';
@@ -149,6 +149,8 @@ String type = '';
 class _Layer1State extends State<Layer1> {
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -195,7 +197,7 @@ class _Layer1State extends State<Layer1> {
                 setState(() {
                   _pageIndex = 0;
                   type = 'UI';
-                  print(type);
+                  // print(type);
                 });
               },
               child: Container(
@@ -230,7 +232,7 @@ class _Layer1State extends State<Layer1> {
                 setState(() {
                   _pageIndex = 1;
                   type = 'UX';
-                  print(type);
+                  // print(type);
                 });
               },
               child: Container(
@@ -265,7 +267,7 @@ class _Layer1State extends State<Layer1> {
                 setState(() {
                   _pageIndex = 2;
                   type = 'POST';
-                  print(type);
+                  // print(type);
                 });
               },
               child: Container(
@@ -299,8 +301,8 @@ class _Layer1State extends State<Layer1> {
               onTap: () {
                 setState(() {
                   _pageIndex = 3;
-                  type = 'SOC';
-                  print(type);
+                  type = 'BRAND';
+                  // print(type);
                 });
               },
               child: Container(
@@ -334,8 +336,8 @@ class _Layer1State extends State<Layer1> {
               onTap: () {
                 setState(() {
                   _pageIndex = 4;
-                  type = 'AD';
-                  print(type);
+                  type = '3D';
+                  // print(type);
                 });
               },
               child: Container(
@@ -365,6 +367,49 @@ class _Layer1State extends State<Layer1> {
                 ),
               ),
             ),
+          ],
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text(
+              "UI Designs",
+              style: GoogleFonts.plusJakartaSans(
+                  color: const Color(0xffBBBBBB),
+                  fontSize: width < 400 ? 10.sp : 12.sp,
+                  fontWeight: FontWeight.w500),
+            ),
+            Text(
+              "UX Designs",
+              style: GoogleFonts.plusJakartaSans(
+                  color: const Color(0xffBBBBBB),
+                  fontSize: width < 400 ? 10.sp : 12.sp,
+                  fontWeight: FontWeight.w500),
+            ),
+            Text(
+              "Posters",
+              style: GoogleFonts.plusJakartaSans(
+                  color: const Color(0xffBBBBBB),
+                  fontSize: width < 400 ? 10.sp : 12.sp,
+                  fontWeight: FontWeight.w500),
+            ),
+            Text(
+              "Brand Assets",
+              style: GoogleFonts.plusJakartaSans(
+                  color: const Color(0xffBBBBBB),
+                  fontSize: width < 400 ? 10.sp : 12.sp,
+                  fontWeight: FontWeight.w500),
+            ),
+            Text(
+              "3D Models",
+              style: GoogleFonts.plusJakartaSans(
+                  color: const Color(0xffBBBBBB),
+                  fontSize: width < 400 ? 10.sp : 12.sp,
+                  fontWeight: FontWeight.w500),
+            )
           ],
         ),
         SizedBox(

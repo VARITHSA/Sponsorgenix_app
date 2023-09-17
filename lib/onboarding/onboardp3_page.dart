@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../routes/routes.dart';
@@ -27,18 +28,26 @@ class _OnboardPage3State extends State<OnboardPage3> {
           const LowerLayer2(),
           const LowerLayer3(),
           Positioned(
-            top: height < 700 ? 500 : height * 0.670,
-            left: width < 400 ? 120 : width * 0.425,
+            top: height < 750 ? height * 0.71.h : height * 0.650.h,
+            left: width < 400 ? width * 0.42.w : width * 0.410.w,
             child: GestureDetector(
               onTap: () {
                 Navigator.pushNamed(context, Routes.homePageRoute);
               },
               child: Center(
                 child: Container(
-                  height: 36,
-                  width: 69,
-                  color: Colors.transparent,
-                  child: Image.asset('assets/next_icon.png'),
+                  height: 80,
+                  width: 80,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.white),
+                    borderRadius: BorderRadius.circular(100),
+                  ),
+                  child: Container(
+                    height: 36,
+                    width: 69,
+                    color: Colors.transparent,
+                    child: Image.asset('assets/next_icon.png'),
+                  ),
                 ),
               ),
             ),
@@ -59,8 +68,8 @@ class LowerLayer3 extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Positioned(
-      top: height < 700 ? 50 : height * 0.25,
-      left: width < 400 ? 60 : width * 0.20,
+      top: height < 750 ? height * 0.19.h : height * 0.25.h,
+      left: width < 400 ? height * 0.080.w : width * 0.20.w,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -73,7 +82,7 @@ class LowerLayer3 extends StatelessWidget {
               "Who are",
               style: GoogleFonts.plusJakartaSans(
                   color: Colors.white,
-                  fontSize: 24,
+                  fontSize: 24.sp,
                   fontWeight: FontWeight.w400),
             ),
           ),
@@ -86,7 +95,7 @@ class LowerLayer3 extends StatelessWidget {
               "You ?",
               style: GoogleFonts.plusJakartaSans(
                   color: Colors.white,
-                  fontSize: 35,
+                  fontSize: 35.sp,
                   fontWeight: FontWeight.w600),
             ),
           ),
@@ -129,8 +138,8 @@ class _OnboardContentsState extends State<OnboardContents> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            height: 25,
-            width: 25,
+            height: 25.h,
+            width: 25.w,
             decoration: BoxDecoration(
               color: isActive ? const Color(0xffDBDBDB) : Colors.transparent,
               border: Border.all(
@@ -145,7 +154,7 @@ class _OnboardContentsState extends State<OnboardContents> {
             child: Text(
               widget.title,
               style: GoogleFonts.plusJakartaSans(
-                fontSize: 23.46,
+                fontSize: 23.46.sp,
                 fontWeight: FontWeight.w500,
                 color: Colors.white,
               ),
@@ -167,14 +176,14 @@ class LowerLayer2 extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Positioned(
-      top: height < 700 ? 20 : height * 0.080,
-      left: width < 300 ? 50 : width * 0.16,
+      top: height < 750 ? height * 0.075.h : height * 0.080.h,
+      left: width < 400 ? width * 0.12.w : width * 0.16.w,
       child: Row(
         children: [
           Image.asset(
             'assets/logo.png',
-            height: 35,
-            width: 43,
+            height: 35.sp,
+            width: 43.sp,
           ),
           Padding(
             padding: const EdgeInsets.only(left: 4),

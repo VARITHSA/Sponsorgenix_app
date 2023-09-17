@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-
 import '../../models/works.dart';
 
 class UiPage extends StatefulWidget {
@@ -13,27 +12,31 @@ class UiPage extends StatefulWidget {
 
 class _UiPageState extends State<UiPage> {
   List<Works> works = [];
+  final String targetType = 'UI';
+
   @override
   void initState() {
     super.initState();
-    loadWorks().then((value) {
+    loadWorks(targetType).then((value) {
       setState(() {
         works = value;
       });
     });
   }
 
-  Future<List<Works>> loadWorks() async {
+  Future<List<Works>> loadWorks(String targetType) async {
     String jsonData =
         await DefaultAssetBundle.of(context).loadString('assets/files/Ui.json');
     List<dynamic> jsonList = jsonDecode(jsonData)['products'];
-    return jsonList.map((json) => Works.fromJson(json)).toList();
+
+    // Filter the JSON data to only include objects of the target type
+    List<dynamic> filteredJsonList = jsonList.where((json) => json['type'] == targetType).toList();
+
+    return filteredJsonList.map((json) => Works.fromJson(json)).toList();
   }
 
   @override
   Widget build(BuildContext context) {
-    // double height = MediaQuery.of(context).size.height;
-    // double width = MediaQuery.of(context).size.width;
     return GridView.builder(
       itemCount: works.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -44,18 +47,17 @@ class _UiPageState extends State<UiPage> {
       ),
       itemBuilder: (context, index) {
         return GestureDetector(
-          onTap: () {
-            showDialog(
-                context: context,
-                builder: (context) {
-                  return Dialog(
-                    child: Image.asset(works[index].image),
-                  );
-                });
-            print(index);
-          },
-          child: Image.asset(works[index].image),
-        );
+            onTap: () {
+              showDialog(
+                  context: context,
+                  builder: (context) {
+                    return Dialog(
+                      child: Image.asset(works[index].image),
+                    );
+                  });
+              print(index);
+            },
+            child: Image.asset(works[index].image));
       },
     );
   }
